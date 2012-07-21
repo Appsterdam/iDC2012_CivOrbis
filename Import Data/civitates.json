@@ -46,10 +46,36 @@
   },
   {
     "name": "Brugges",
-    "mapFile": "brugges"
+    "mapFile": "brugges",
+    "pois": [
+      {
+        "name": "Grote Markt",
+        "text": "The Markt of Bruges is located in the heart of the city and covers an area of about 1 hectare. Some historical highlights around the square include the 12th-century belfry and the Provincial Court (originally the Waterhall, which in 1787 was demolished and replaced by a classicist building that from 1850 served as provincial court and after a fire in 1878 was rebuilt in a neo-Gothic style in 1887. In the center of the market stands the statue of Jan Breydel and Pieter de Coninck.",
+        "latitude": 3.224246,
+        "longitude": 51.208866, 
+        "mapPoint": "{1564,1002}"
+      },
+      {
+        "name": "Church of Our Lady",
+        "text": "The Church of Our Lady (Dutch: Onze-Lieve-Vrouwekerk) dates mainly from the 13th, 14th and 15th centuries.\nIts tower, at 122.3 meters in height, remains the tallest structure in the city and the second tallest brickwork tower in the world.",
+        "latitude": 3.233564,
+        "longitude": 51.209663,
+        "mapPoint": "{1834,795}"
+      }
+    ]
   },
   {
     "name": "Cologne",
-    "mapFile": "cologne"
+    "mapFile": "cologne",
+    "pois": [
+      {
+        "name": "Cologne Cathedral",
+        "text": "Cologne Cathedral (German: Kölner Dom) is a renowned monument of German Catholicism and Gothic architecture and is a World Heritage Site.\nConstruction of Cologne Cathedral commenced in 1248 but was halted in 1473, leaving it unfinished. Work recommenced in the 19th century and was completed, to the original plan, in 1880. It is 144.5 metres (474 ft) long, 86.5 m (284 ft) wide and its towers are approximately 157 m (515 ft) tall. The cathedral is the largest Gothic church in Northern Europe and has the second-tallest spires and largest façade of any church in the world. The choir has the largest height to width ratio, 3.6:1, of any medieval church.",
+        "latitude": 6.958283,
+        "longitude": 50.941306,
+        "mapPoint": "{1022,821}"
+      }
+    ]
+
   }
 ]
