@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B03DC28A15BAD48100F19D49 /* amsterdam.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B03DC28715BAD48100F19D49 /* amsterdam.jpg */; };
+		B03DC28B15BAD48100F19D49 /* brugges.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B03DC28815BAD48100F19D49 /* brugges.jpg */; };
+		B03DC28C15BAD48100F19D49 /* cologne.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B03DC28915BAD48100F19D49 /* cologne.jpg */; };
+		B03DC28E15BAEED300F19D49 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = B03DC28D15BAEED300F19D49 /* pin.png */; };
 		B0DDFA5715BA9EC700CE8B15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DDFA5615BA9EC700CE8B15 /* UIKit.framework */; };
 		B0DDFA5915BA9EC700CE8B15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DDFA5815BA9EC700CE8B15 /* Foundation.framework */; };
 		B0DDFA5B15BA9EC700CE8B15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DDFA5A15BA9EC700CE8B15 /* CoreGraphics.framework */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B03DC28715BAD48100F19D49 /* amsterdam.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amsterdam.jpg; sourceTree = "<group>"; };
+		B03DC28815BAD48100F19D49 /* brugges.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brugges.jpg; sourceTree = "<group>"; };
+		B03DC28915BAD48100F19D49 /* cologne.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cologne.jpg; sourceTree = "<group>"; };
+		B03DC28D15BAEED300F19D49 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		B0DDFA5215BA9EC700CE8B15 /* Civis Orbis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Civis Orbis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0DDFA5615BA9EC700CE8B15 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B0DDFA5815BA9EC700CE8B15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -149,6 +157,7 @@
 		B0DDFA7F15BAA53200CE8B15 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B03DC28D15BAEED300F19D49 /* pin.png */,
 				B0DDFA8015BAA54600CE8B15 /* Maps */,
 			);
 			path = Assets;
@@ -157,6 +166,9 @@
 		B0DDFA8015BAA54600CE8B15 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				B03DC28715BAD48100F19D49 /* amsterdam.jpg */,
+				B03DC28815BAD48100F19D49 /* brugges.jpg */,
+				B03DC28915BAD48100F19D49 /* cologne.jpg */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -234,6 +246,10 @@
 				B0DDFA7515BA9EC700CE8B15 /* CIVOMasterViewController.xib in Resources */,
 				B0DDFA7815BA9EC700CE8B15 /* CIVODetailViewController.xib in Resources */,
 				B0DDFAD815BAAA7B00CE8B15 /* civitates.json in Resources */,
+				B03DC28A15BAD48100F19D49 /* amsterdam.jpg in Resources */,
+				B03DC28B15BAD48100F19D49 /* brugges.jpg in Resources */,
+				B03DC28C15BAD48100F19D49 /* cologne.jpg in Resources */,
+				B03DC28E15BAEED300F19D49 /* pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +327,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -332,6 +349,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -378,6 +396,7 @@
 				B0DDFA7D15BA9EC700CE8B15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -8,18 +8,29 @@
 
 #import "CIVODetailViewController.h"
 
-@interface CIVODetailViewController ()
+#import "City.h"
+
+const float CIVOInitialMapZoomLevel = 0.2;
+
+@interface CIVODetailViewController () <UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
+
 - (void)configureView;
+
 @end
 
 @implementation CIVODetailViewController
 
 #pragma mark - Managing the detail item
+@synthesize scrollView;
+@synthesize mapImageView;
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)setCity:(id)newCity
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    if (_city != newCity) {
+        _city = newCity;
         
         // Update the view.
         [self configureView];
@@ -28,11 +39,23 @@
 
 - (void)configureView
 {
-    // Update the user interface for the detail item.
-
-	if (self.detailItem) {
-	    self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"name"] description];
+	if (!self.isViewLoaded) {
+		return;
 	}
+	
+	// Update the user interface for the detail item.
+	self.title = self.city.name;
+	
+	NSString *mapFileName = [NSString stringWithFormat:@"%@.jpg", self.city.mapFile];
+	UIImage *mapImage = [UIImage imageNamed:mapFileName];
+	self.mapImageView.frame = (CGRect) {
+		.origin = CGPointZero,
+		.size = mapImage.size,
+	};
+	self.mapImageView.image = mapImage;
+	
+	self.scrollView.contentSize = self.mapImageView.image.size;
+	self.scrollView.zoomScale = CIVOInitialMapZoomLevel;
 }
 
 - (void)viewDidLoad
@@ -44,8 +67,10 @@
 
 - (void)viewDidUnload
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
+	[self setMapImageView:nil];
+	[self setScrollView:nil];
+	[super viewDidUnload];
+	// Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -57,9 +82,16 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-		self.title = NSLocalizedString(@"Detail", @"Detail");
+		self.title = NSLocalizedString(@"Map", @"Map");
     }
     return self;
 }
-							
+
+#pragma mark - UIScrollViewDelegate
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+	return self.mapImageView;
+}
+		
 @end
