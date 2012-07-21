@@ -13,6 +13,7 @@
 #import "POI.h"
 
 const float CIVOInitialMapZoomLevel = 0.225;
+const NSTimeInterval CIVOTimeIntervalBeforeHidingNavBar = 3.0;
 
 @interface CIVODetailViewController () <UIScrollViewDelegate>
 
@@ -20,10 +21,14 @@ const float CIVOInitialMapZoomLevel = 0.225;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
 
+@property (strong, nonatomic) NSTimer *hideNavbarTimer;
+
 @property (nonatomic, strong) NSArray *POIs;
 
 - (void) configureView;
 - (void) handlePinTap: (UIGestureRecognizer *)gestureRecognizer;
+- (void) handleScrollViewTap: (UIGestureRecognizer *) gestureRecognizer;
+- (void) handleHideNavBarTimerFired: (NSTimer *) timer;
 
 @end
 
@@ -32,6 +37,11 @@ const float CIVOInitialMapZoomLevel = 0.225;
 #pragma mark - Managing the detail item
 @synthesize scrollView;
 @synthesize mapImageView;
+
+- (void) dealloc
+{
+	[_hideNavbarTimer invalidate];
+}
 
 - (void)setCity:(City *)newCity
 {
@@ -88,16 +98,30 @@ const float CIVOInitialMapZoomLevel = 0.225;
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+	[super viewDidLoad];
+
 	// Do any additional setup after loading the view, typically from a nib.
 	[self configureView];
+	
+	UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleScrollViewTap:)];
+	[self.scrollView addGestureRecognizer:tapRecognizer];
 }
 
-- (void) viewWillAppear:(BOOL)animated
+- (void) viewDidAppear:(BOOL)animated
 {
-	[super viewWillAppear:animated];
+	[super viewDidAppear:animated];
 
 	[self.navigationController setNavigationBarHidden:NO animated:YES];
+	
+	[self.hideNavbarTimer invalidate];
+	self.hideNavbarTimer = [NSTimer scheduledTimerWithTimeInterval:CIVOTimeIntervalBeforeHidingNavBar target:self selector:@selector(handleHideNavBarTimerFired:) userInfo:nil repeats:NO];
+}
+
+- (void) viewDidDisappear:(BOOL)animated
+{
+	[super viewDidDisappear:animated];
+	
+	[self.hideNavbarTimer invalidate];
 }
 
 - (void)viewDidUnload
@@ -141,8 +165,24 @@ const float CIVOInitialMapZoomLevel = 0.225;
 	POI *POI = [self.POIs objectAtIndex:gestureRecognizer.view.tag];
 	self.POIViewController.POI = POI;
 	[self.navigationController pushViewController:self.POIViewController animated:YES];
-
+	
 }
 
+- (void) handleScrollViewTap: (UIGestureRecognizer *) gestureRecognizer
+{
+	[self.navigationController setNavigationBarHidden:NO animated:YES];
+	[self.hideNavbarTimer invalidate];
+	self.hideNavbarTimer = [NSTimer scheduledTimerWithTimeInterval:CIVOTimeIntervalBeforeHidingNavBar target:self selector:@selector(handleHideNavBarTimerFired:) userInfo:nil repeats:NO];
+}
 
+									
+									
+#pragma mark - Timer handlers
+									
+- (void) handleHideNavBarTimerFired: (NSTimer *) timer
+{
+	[self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+									
+									
 @end
