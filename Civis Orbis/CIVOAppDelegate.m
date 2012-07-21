@@ -282,6 +282,9 @@ NSString * const CIVODataImportedUserDefaultsKey = @"CIVODataImportedUserDefault
 					
 					} else {
 						
+						// We made it!
+						[[NSUserDefaults standardUserDefaults] setBool:YES forKey:CIVODataImportedUserDefaultsKey];
+
 						NSManagedObjectContext *parentMOC = [moc parentContext];
 						[parentMOC performBlock:^{
 							
@@ -298,9 +301,6 @@ NSString * const CIVODataImportedUserDefaultsKey = @"CIVODataImportedUserDefault
 				}];
 				
 			}
-			
-			// We made it!
-			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:CIVODataImportedUserDefaultsKey];
 			
 			dispatch_async(dispatch_get_main_queue(), ^{
 				[MBProgressHUD hideHUDForView:self.window animated:YES];
