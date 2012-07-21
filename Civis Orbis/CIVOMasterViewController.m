@@ -142,6 +142,14 @@
 	return mapImageView;
 }
 
+#pragma mark - iCarouselDelegate
 
+- (void) carouselCurrentItemIndexDidChange:(iCarousel *)carousel
+{
+	NSUInteger currentIndex = carousel.currentItemIndex;
+	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:currentIndex inSection:0];
+	City *currentCity = (City *) [self.fetchedResultsController objectAtIndexPath:indexPath];
+	self.cityNameLabel.text = currentCity.name;
+}
 
 @end
