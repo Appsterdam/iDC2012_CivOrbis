@@ -98,6 +98,13 @@ const float CIVOInitialMapZoomLevel = 0.2;
 	[self configureView];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+
+	[self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 - (void)viewDidUnload
 {
 	[self setMapImageView:nil];

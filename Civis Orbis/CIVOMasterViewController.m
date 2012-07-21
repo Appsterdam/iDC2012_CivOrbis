@@ -39,6 +39,13 @@
 	self.carouselView.type = iCarouselTypeRotary;
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	[self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
 - (void)viewDidUnload
 {
 	[self setCityNameLabel:nil];
@@ -150,6 +157,28 @@
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:currentIndex inSection:0];
 	City *currentCity = (City *) [self.fetchedResultsController objectAtIndexPath:indexPath];
 	self.cityNameLabel.text = currentCity.name;
+}
+
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
+	if (!self.detailViewController) {
+		self.detailViewController = [[CIVODetailViewController alloc] initWithNibName:@"CIVODetailViewController" bundle:nil];
+	}
+	
+	NSUInteger currentIndex = carousel.currentItemIndex;
+	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:currentIndex inSection:0];
+	City *currentCity = (City *) [self.fetchedResultsController objectAtIndexPath:indexPath];
+	self.detailViewController.city = currentCity;
+	
+	NSString *backButtonText = NSLocalizedString(@"Cities", nil);
+	UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+											 initWithTitle: backButtonText
+											 style: UIBarButtonItemStyleBordered
+											 target: nil action: nil];
+	
+	[self.navigationItem setBackBarButtonItem: backButton];
+	
+	[self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
 @end
