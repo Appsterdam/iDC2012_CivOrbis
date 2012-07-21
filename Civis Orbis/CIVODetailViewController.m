@@ -9,14 +9,18 @@
 #import "CIVODetailViewController.h"
 
 #import "City.h"
+#import "CIVOPOIViewController.h"
 #import "POI.h"
 
 const float CIVOInitialMapZoomLevel = 0.2;
 
 @interface CIVODetailViewController () <UIScrollViewDelegate>
 
+@property (nonatomic, strong) CIVOPOIViewController *POIViewController;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
+
+@property (nonatomic, strong) NSArray *POIs;
 
 - (void) configureView;
 - (void) handlePinTap: (UIGestureRecognizer *)gestureRecognizer;
@@ -29,10 +33,13 @@ const float CIVOInitialMapZoomLevel = 0.2;
 @synthesize scrollView;
 @synthesize mapImageView;
 
-- (void)setCity:(id)newCity
+- (void)setCity:(City *)newCity
 {
     if (_city != newCity) {
         _city = newCity;
+		 
+		 // We need to put the POIs in a array so we can grab them by index.
+		 self.POIs = [_city.pois allObjects];
         
         // Update the view.
         [self configureView];
@@ -57,11 +64,13 @@ const float CIVOInitialMapZoomLevel = 0.2;
 	self.mapImageView.image = mapImage;
 
 	// Place the pins:
-	for (POI *poi in self.city.pois) {
+	for (POI *poi in self.POIs) {
 
 		UIImage *pinImage = [UIImage imageNamed:@"pin.png"];
 		UIImageView *pinView = [[UIImageView alloc] initWithImage:pinImage];
 		pinView.userInteractionEnabled = YES;
+		// TAGHACK: We're storing the POI index in the tag.
+		pinView.tag = [self.POIs indexOfObject:poi];
 		
 		CGPoint pinPoint = CGPointFromString(poi.mapPoint);
 		// The bottom left of the pin is the bit that belongs on the point.
@@ -117,6 +126,15 @@ const float CIVOInitialMapZoomLevel = 0.2;
 
 - (void) handlePinTap: (UIGestureRecognizer *)gestureRecognizer
 {
+	
+	if (!self.POIViewController) {
+		self.POIViewController = [[CIVOPOIViewController alloc] initWithNibName:nil bundle:nil];
+	}
+
+	POI *POI = [self.POIs objectAtIndex:gestureRecognizer.view.tag];
+	self.POIViewController.POI = POI;
+	[self.navigationController pushViewController:self.POIViewController animated:YES];
+
 }
 
 

@@ -30,6 +30,8 @@
 		B0DDFAE415BAB5A800CE8B15 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFAE315BAB5A800CE8B15 /* City.m */; };
 		B0DDFAE715BAB5A800CE8B15 /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFAE615BAB5A800CE8B15 /* CheckIn.m */; };
 		B0DDFAEA15BAB5A800CE8B15 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFAE915BAB5A800CE8B15 /* Tour.m */; };
+		B0FCA30115BB00B800B78FC4 /* CIVOPOIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FCA2FF15BB00B800B78FC4 /* CIVOPOIViewController.m */; };
+		B0FCA30215BB00B800B78FC4 /* CIVOPOIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0FCA30015BB00B800B78FC4 /* CIVOPOIViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,9 @@
 		B0DDFAE615BAB5A800CE8B15 /* CheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIn.m; sourceTree = "<group>"; };
 		B0DDFAE815BAB5A800CE8B15 /* Tour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tour.h; sourceTree = "<group>"; };
 		B0DDFAE915BAB5A800CE8B15 /* Tour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tour.m; sourceTree = "<group>"; };
+		B0FCA2FE15BB00B800B78FC4 /* CIVOPOIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIVOPOIViewController.h; sourceTree = "<group>"; };
+		B0FCA2FF15BB00B800B78FC4 /* CIVOPOIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIVOPOIViewController.m; sourceTree = "<group>"; };
+		B0FCA30015BB00B800B78FC4 /* CIVOPOIViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CIVOPOIViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +136,9 @@
 				B0DDFAD915BAAD4F00CE8B15 /* MBProgressHUD.h */,
 				B0DDFADA15BAAD5000CE8B15 /* MBProgressHUD.m */,
 				B0DDFA5F15BA9EC700CE8B15 /* Supporting Files */,
+				B0FCA2FE15BB00B800B78FC4 /* CIVOPOIViewController.h */,
+				B0FCA2FF15BB00B800B78FC4 /* CIVOPOIViewController.m */,
+				B0FCA30015BB00B800B78FC4 /* CIVOPOIViewController.xib */,
 			);
 			path = "Civis Orbis";
 			sourceTree = "<group>";
@@ -250,6 +258,7 @@
 				B03DC28B15BAD48100F19D49 /* brugges.jpg in Resources */,
 				B03DC28C15BAD48100F19D49 /* cologne.jpg in Resources */,
 				B03DC28E15BAEED300F19D49 /* pin.png in Resources */,
+				B0FCA30215BB00B800B78FC4 /* CIVOPOIViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +280,7 @@
 				B0DDFAE415BAB5A800CE8B15 /* City.m in Sources */,
 				B0DDFAE715BAB5A800CE8B15 /* CheckIn.m in Sources */,
 				B0DDFAEA15BAB5A800CE8B15 /* Tour.m in Sources */,
+				B0FCA30115BB00B800B78FC4 /* CIVOPOIViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
