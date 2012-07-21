@@ -34,6 +34,8 @@
 		B05177F615BB3D0900C85CEE /* Vollkorn-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B05177D815BB3D0900C85CEE /* Vollkorn-BoldItalic.ttf */; };
 		B05177F715BB3D0900C85CEE /* Vollkorn-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B05177D915BB3D0900C85CEE /* Vollkorn-Italic.ttf */; };
 		B05177F815BB3D0900C85CEE /* Vollkorn-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B05177DA15BB3D0900C85CEE /* Vollkorn-Regular.ttf */; };
+		B05177FD15BB5B3700C85CEE /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B05177FB15BB5B3700C85CEE /* icon.png */; };
+		B051780015BB5C4100C85CEE /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B05177FF15BB5C4100C85CEE /* icon@2x.png */; };
 		B0DDFA5715BA9EC700CE8B15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DDFA5615BA9EC700CE8B15 /* UIKit.framework */; };
 		B0DDFA5915BA9EC700CE8B15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DDFA5815BA9EC700CE8B15 /* Foundation.framework */; };
 		B0DDFA5B15BA9EC700CE8B15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DDFA5A15BA9EC700CE8B15 /* CoreGraphics.framework */; };
@@ -106,6 +108,8 @@
 		B05177D815BB3D0900C85CEE /* Vollkorn-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vollkorn-BoldItalic.ttf"; sourceTree = "<group>"; };
 		B05177D915BB3D0900C85CEE /* Vollkorn-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vollkorn-Italic.ttf"; sourceTree = "<group>"; };
 		B05177DA15BB3D0900C85CEE /* Vollkorn-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vollkorn-Regular.ttf"; sourceTree = "<group>"; };
+		B05177FB15BB5B3700C85CEE /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		B05177FF15BB5C4100C85CEE /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		B0DDFA5215BA9EC700CE8B15 /* Civis Orbis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Civis Orbis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0DDFA5615BA9EC700CE8B15 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B0DDFA5815BA9EC700CE8B15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -372,6 +376,8 @@
 		B0DDFA7F15BAA53200CE8B15 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B05177FB15BB5B3700C85CEE /* icon.png */,
+				B05177FF15BB5C4100C85CEE /* icon@2x.png */,
 				B05177B115BB3D0900C85CEE /* Fonts */,
 				B05177A915BB3C9700C85CEE /* background-paper.png */,
 				B05177AA15BB3C9700C85CEE /* background-paper@2x.png */,
@@ -510,6 +516,8 @@
 				B05177F615BB3D0900C85CEE /* Vollkorn-BoldItalic.ttf in Resources */,
 				B05177F715BB3D0900C85CEE /* Vollkorn-Italic.ttf in Resources */,
 				B05177F815BB3D0900C85CEE /* Vollkorn-Regular.ttf in Resources */,
+				B05177FD15BB5B3700C85CEE /* icon.png in Resources */,
+				B051780015BB5C4100C85CEE /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
