@@ -9,6 +9,7 @@
 #import "CIVODetailViewController.h"
 
 #import "City.h"
+#import "POI.h"
 
 const float CIVOInitialMapZoomLevel = 0.2;
 
@@ -17,7 +18,8 @@ const float CIVOInitialMapZoomLevel = 0.2;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
 
-- (void)configureView;
+- (void) configureView;
+- (void) handlePinTap: (UIGestureRecognizer *)gestureRecognizer;
 
 @end
 
@@ -53,6 +55,23 @@ const float CIVOInitialMapZoomLevel = 0.2;
 		.size = mapImage.size,
 	};
 	self.mapImageView.image = mapImage;
+
+	// Place the pins:
+	for (POI *poi in self.city.pois) {
+
+		UIImage *pinImage = [UIImage imageNamed:@"pin.png"];
+		UIImageView *pinView = [[UIImageView alloc] initWithImage:pinImage];
+		pinView.userInteractionEnabled = YES;
+		
+		CGPoint pinPoint = CGPointFromString(poi.mapPoint);
+		// The bottom left of the pin is the bit that belongs on the point.
+		pinPoint = CGPointMake(pinPoint.x + (pinImage.size.width / 2), pinPoint.y - (pinImage.size.height / 2));
+		pinView.center = pinPoint;
+		[self.mapImageView addSubview:pinView];
+		
+		UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinTap:)];
+		[pinView addGestureRecognizer:tapRecognizer];
+	}
 	
 	self.scrollView.contentSize = self.mapImageView.image.size;
 	self.scrollView.zoomScale = CIVOInitialMapZoomLevel;
@@ -94,4 +113,11 @@ const float CIVOInitialMapZoomLevel = 0.2;
 	return self.mapImageView;
 }
 		
+#pragma mark - Gesture recognizers
+
+- (void) handlePinTap: (UIGestureRecognizer *)gestureRecognizer
+{
+}
+
+
 @end
