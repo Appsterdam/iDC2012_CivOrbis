@@ -1,5 +1,5 @@
 //
-//  ROBKMasterViewController.h
+//  CIVOMasterViewController.h
 //  Civis Orbis
 //
 //  Created by Kris Markel on 7/21/12.
@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class ROBKDetailViewController;
+@class CIVODetailViewController;
 
 #import <CoreData/CoreData.h>
 
-@interface ROBKMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface CIVOMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
-@property (strong, nonatomic) ROBKDetailViewController *detailViewController;
+@property (strong, nonatomic) CIVODetailViewController *detailViewController;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

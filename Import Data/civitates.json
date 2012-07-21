@@ -1,0 +1,55 @@
+[
+  {
+    "name": "Amsterdam",
+    "mapFile": "amsterdam",
+    "pois": [
+      {
+        "name": "The Dam",
+        "text": "The Dam derives its name from its original function: a dam on the Amstel River, hence also the name of the city. Built in approximately 1270, the dam formed the first connection between the settlements on the sides of the river.\nAs the dam was gradually built up it became wide enough for a town square, which remained the core of the town developing around it. Dam Square as it exists today grew out of what was originally two squares: the actual dam, called Middeldam; and Plaetse, an adjacent plaza to the west.\nThe area became a centre not only of commercial activity but also of the government, as the site of Amsterdam's town hall.",
+        "latitude": 4.893122,
+        "longitude": 52.372953,
+        "mapPoint": "{1305,715}"
+      },
+      {
+        "name": "Oudekerk",
+        "text": "The Oude Kerk (\"old church\") is Amsterdam’s oldest building and oldest parish church, consecrated in 1306 by the bishop of Utrecht with Saint Nicolas as its patron saint. A wooden chapel stood at the location of today's Oude Kerk. It was replaced by a stone chapel and consegrated in 1306. After the Reformation in 1578 it became a Calvinist church, which it remains today. It stands in De Wallen, now Amsterdam's main red-light district. The square surrounding the church is the Oudekerksplein.",
+        "latitude": 4.898127,
+        "longitude": 52.374351,
+        "mapPoint": "{1312,1184}"
+      },
+      {
+        "name": "Nieuwekerk",
+        "text": "The Nieuwe Kerk (\"New Church\") was relatively new... in 1572. The bishop of Utrecht gave the city of Amsterdam permission to have a second church in 1408 because the Oude Kerk (\"Old Church\") had grown too small for the growing population of the city.\nThe church was damaged by the city fires of 1421 and 1452 and burned down almost entirely in 1645, after which it was rebuilt in Gothic style.",
+        "latitude": 4.891722,
+        "longitude": 52.373896,
+        "mapPoint": "{1536,745}"
+      },
+      {
+        "name": "Muntplein",
+        "text": "Muntplein is named after the Munttoren (or simply Munt) tower which stands on this square. This tower was once part of one of the three main medieval city gates. In the 17th century, it temporarily served as a mint, hence the name.",
+        "latitude": 4.893272,
+        "longitude": 52.367274,
+        "mapPoint": "{452,408}"
+      }
+    ],
+    "tours": [
+      {
+        "name": "Points of Interest",
+        "pois": [
+          "The Dam",
+          "Nieuwekerk",
+          "Oudekerk",
+          "Muntplein"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Brugges",
+    "mapFile": "brugges"
+  },
+  {
+    "name": "Cologne",
+    "mapFile": "cologne"
+  }
+]

@@ -1,20 +1,20 @@
 //
-//  ROBKMasterViewController.m
+//  CIVOMasterViewController.m
 //  Civis Orbis
 //
 //  Created by Kris Markel on 7/21/12.
 //  Copyright (c) 2012 Civis Orbis. All rights reserved.
 //
 
-#import "ROBKMasterViewController.h"
+#import "CIVOMasterViewController.h"
 
-#import "ROBKDetailViewController.h"
+#import "CIVODetailViewController.h"
 
-@interface ROBKMasterViewController ()
+@interface CIVOMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
-@implementation ROBKMasterViewController
+@implementation CIVOMasterViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -125,7 +125,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (!self.detailViewController) {
-        self.detailViewController = [[ROBKDetailViewController alloc] initWithNibName:@"ROBKDetailViewController" bundle:nil];
+        self.detailViewController = [[CIVODetailViewController alloc] initWithNibName:@"CIVODetailViewController" bundle:nil];
     }
     NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
     self.detailViewController.detailItem = object;
@@ -142,14 +142,14 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"City" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -234,7 +234,7 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    cell.textLabel.text = [[object valueForKey:@"name"] description];
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  ROBKDetailViewController.h
+//  CIVODetailViewController.h
 //  Civis Orbis
 //
 //  Created by Kris Markel on 7/21/12.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ROBKDetailViewController : UIViewController
+@interface CIVODetailViewController : UIViewController
 
 @property (strong, nonatomic) id detailItem;
 

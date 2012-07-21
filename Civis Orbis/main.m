@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ROBKAppDelegate.h"
+#import "CIVOAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
 	@autoreleasepool {
-	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([ROBKAppDelegate class]));
+	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([CIVOAppDelegate class]));
 	}
 }

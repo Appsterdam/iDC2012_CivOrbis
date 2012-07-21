@@ -1,16 +1,28 @@
 //
-//  ROBKAppDelegate.m
+//  CIVOAppDelegate.m
 //  Civis Orbis
 //
 //  Created by Kris Markel on 7/21/12.
 //  Copyright (c) 2012 Civis Orbis. All rights reserved.
 //
 
-#import "ROBKAppDelegate.h"
+#import "CIVOAppDelegate.h"
 
-#import "ROBKMasterViewController.h"
+#import "City.h"
+#import "CIVOMasterViewController.h"
+#import "MBProgressHUD.h"
+#import "POI.h"
+#import "Tour.h"
 
-@implementation ROBKAppDelegate
+NSString * const CIVODataImportedUserDefaultsKey = @"CIVODataImportedUserDefaultsKey";
+
+@interface CIVOAppDelegate()
+
+- (void) importData;
+
+@end
+
+@implementation CIVOAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -18,15 +30,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-
-	ROBKMasterViewController *masterViewController = [[ROBKMasterViewController alloc] initWithNibName:@"ROBKMasterViewController" bundle:nil];
+	
+	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	// Override point for customization after application launch.
+	
+	CIVOMasterViewController *masterViewController = [[CIVOMasterViewController alloc] initWithNibName:@"CIVOMasterViewController" bundle:nil];
 	self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
 	masterViewController.managedObjectContext = self.managedObjectContext;
 	self.window.rootViewController = self.navigationController;
-    [self.window makeKeyAndVisible];
-    return YES;
+	[self.window makeKeyAndVisible];
+	
+	[self importData];
+	
+	return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -53,6 +69,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+	
 	// Saves changes in the application's managed object context before the application terminates.
 	[self saveContext];
 }
@@ -83,7 +100,7 @@
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
     return _managedObjectContext;
@@ -150,6 +167,159 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+#pragma mark - Private
+
+- (void) importData
+{
+	BOOL dataImported = [[NSUserDefaults standardUserDefaults] boolForKey:CIVODataImportedUserDefaultsKey];
+	
+	if (!dataImported) {
+		
+		MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window animated:YES];
+		hud.labelText = NSLocalizedString(@"Importing Data", nil);
+		
+		dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+
+			__block BOOL importSucceeded = YES;
+			NSURL *dataURL = [[NSBundle mainBundle] URLForResource:@"civitates" withExtension:@"json"];
+			NSData *data;
+			
+			if (dataURL) {
+
+				NSError *dataReadError;
+				data = [NSData dataWithContentsOfURL:dataURL options:0 error:&dataReadError];
+				if (!data) {
+					NSLog(@"Could not read data file %@. Error: %@", dataURL, dataReadError);
+					importSucceeded = NO;
+				}
+				
+			} else {
+
+				NSLog(@"Could not get data URL from the bundle.");
+				importSucceeded = NO;
+
+			}
+			
+			id JSONData;
+			
+			if (importSucceeded) {
+
+				NSError *JSONError;
+				JSONData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONError];
+				if (!JSONData) {
+					NSLog(@"Error parsing JSON: %@.", JSONError);
+					importSucceeded = NO;
+				}
+				NSAssert([JSONData isKindOfClass:[NSArray class]], @"Wrong type returned as the top level JSON object.");
+				
+			}
+			
+			if (importSucceeded) {
+				
+				// Brute force JSON importing.
+				
+				NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+				moc.parentContext = self.managedObjectContext;
+				
+				[moc performBlockAndWait:^{
+
+					for (NSDictionary *cityDictionary in JSONData) {
+						
+						City *city = [NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:moc];
+						city.name = [cityDictionary objectForKey:@"name"];
+						city.mapFile = [cityDictionary objectForKey:@"mapFile"];
+						
+						NSMutableDictionary *POIsByName = [NSMutableDictionary new];
+						
+						NSArray *POIArray = [cityDictionary objectForKey:@"pois"];
+						
+						for (NSDictionary *poiDictionary in POIArray) {
+
+							POI *poi = [NSEntityDescription insertNewObjectForEntityForName:@"POI" inManagedObjectContext:moc];
+							poi.name = [poiDictionary objectForKey:@"name"];
+							poi.text = [poiDictionary objectForKey:@"text"];
+							
+							NSString *pointString = [poiDictionary objectForKey:@"mapPoint"];
+							NSAssert(!CGPointEqualToPoint(CGPointFromString(pointString), CGPointZero), @"Could not parse mapPoint");
+							poi.mapPoint = pointString;
+							
+							poi.latitude = [poiDictionary objectForKey:@"latitude"];
+							poi.longitude = [poiDictionary objectForKey:@"longitude"];
+							
+							[city addPoisObject:poi];
+							
+							[POIsByName setObject:poi forKey:poi.name];
+							
+						}
+						
+						NSArray *tourArray = [cityDictionary objectForKey:@"tours"];
+						
+						for (NSDictionary *tourDictionary in tourArray) {
+							
+							Tour *tour = [NSEntityDescription insertNewObjectForEntityForName:@"Tour" inManagedObjectContext:moc];
+							tour.name = [tourDictionary objectForKey:@"name"];
+							
+							NSArray *POIs = [tourDictionary objectForKey:@"pois"];
+							for (NSString *POIName in POIs) {
+	
+								POI *currentPOI = [POIsByName objectForKey:POIName];
+								[tour addPoisObject:currentPOI];
+	
+							}
+							
+						}
+						
+					}
+					
+					NSError *saveError;
+					BOOL saved = [moc save:&saveError];
+					if (!saved) {
+					
+						NSLog(@"Error saving after the data import");
+						importSucceeded = NO;
+					
+					} else {
+						
+						NSManagedObjectContext *parentMOC = [moc parentContext];
+						[parentMOC performBlock:^{
+							
+							NSError *parentSaveError;
+							BOOL parentSaved = [parentMOC save:&parentSaveError];
+							if (!parentSaved) {
+								NSLog(@"Error saving data. %@", parentSaveError);
+							}
+							
+						}];
+					}
+					
+					
+				}];
+				
+			}
+			
+			// We made it!
+			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:CIVODataImportedUserDefaultsKey];
+			
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[MBProgressHUD hideHUDForView:self.window animated:YES];
+				
+				if (!importSucceeded) {
+					
+					NSString *importErrorMessage = NSLocalizedString(@"There was a problem importing the data. Please contact your friendly neighborhood support team.", nil);
+					NSString *OKButtonTitle = NSLocalizedString(@"OK", @"Title for an OK button");
+					UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:importErrorMessage delegate:nil cancelButtonTitle:OKButtonTitle otherButtonTitles:nil];
+					[alert show];
+
+				}
+				
+			});
+			
+			
+		});
+	}
+							
 }
 
 @end

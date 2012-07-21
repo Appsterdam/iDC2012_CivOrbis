@@ -1,18 +1,18 @@
 //
-//  ROBKDetailViewController.m
+//  CIVODetailViewController.m
 //  Civis Orbis
 //
 //  Created by Kris Markel on 7/21/12.
 //  Copyright (c) 2012 Civis Orbis. All rights reserved.
 //
 
-#import "ROBKDetailViewController.h"
+#import "CIVODetailViewController.h"
 
-@interface ROBKDetailViewController ()
+@interface CIVODetailViewController ()
 - (void)configureView;
 @end
 
-@implementation ROBKDetailViewController
+@implementation CIVODetailViewController
 
 #pragma mark - Managing the detail item
 
@@ -31,7 +31,7 @@
     // Update the user interface for the detail item.
 
 	if (self.detailItem) {
-	    self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+	    self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"name"] description];
 	}
 }
 

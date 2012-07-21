@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Event">
-        <attribute name="timeStamp" optional="YES" attributeType="Date"/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="12A269" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CheckIn" representedClassName="CheckIn" syncable="YES">
+        <attribute name="timeStamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="poi" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="POI" inverseName="checkIns" inverseEntity="POI" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="checkIns" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="City" representedClassName="City" syncable="YES">
+        <attribute name="mapFile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pois" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="POI" inverseName="city" inverseEntity="POI" syncable="YES"/>
+        <relationship name="tours" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tour" inverseName="city" inverseEntity="Tour" syncable="YES"/>
+    </entity>
+    <entity name="POI" representedClassName="POI" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="mapPoint" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="checkIns" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CheckIn" inverseName="poi" inverseEntity="CheckIn" syncable="YES"/>
+        <relationship name="city" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="pois" inverseEntity="City" syncable="YES"/>
+        <relationship name="tour" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tour" inverseName="pois" inverseEntity="Tour" syncable="YES"/>
+    </entity>
+    <entity name="Tour" representedClassName="Tour" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="tours" inverseEntity="City" syncable="YES"/>
+        <relationship name="pois" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="POI" inverseName="tour" inverseEntity="POI" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="checkIns" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CheckIn" inverseName="user" inverseEntity="CheckIn" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="City" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="POI" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="CheckIn" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="User" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="Tour" positionX="160" positionY="192" width="128" height="105"/>
     </elements>
 </model>

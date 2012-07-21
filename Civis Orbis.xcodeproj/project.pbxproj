@@ -13,12 +13,19 @@
 		B0DDFA5D15BA9EC700CE8B15 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DDFA5C15BA9EC700CE8B15 /* CoreData.framework */; };
 		B0DDFA6315BA9EC700CE8B15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0DDFA6115BA9EC700CE8B15 /* InfoPlist.strings */; };
 		B0DDFA6515BA9EC700CE8B15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFA6415BA9EC700CE8B15 /* main.m */; };
-		B0DDFA6915BA9EC700CE8B15 /* ROBKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFA6815BA9EC700CE8B15 /* ROBKAppDelegate.m */; };
+		B0DDFA6915BA9EC700CE8B15 /* CIVOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFA6815BA9EC700CE8B15 /* CIVOAppDelegate.m */; };
 		B0DDFA6C15BA9EC700CE8B15 /* Civis_Orbis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFA6A15BA9EC700CE8B15 /* Civis_Orbis.xcdatamodeld */; };
-		B0DDFA6F15BA9EC700CE8B15 /* ROBKMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFA6E15BA9EC700CE8B15 /* ROBKMasterViewController.m */; };
-		B0DDFA7215BA9EC700CE8B15 /* ROBKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFA7115BA9EC700CE8B15 /* ROBKDetailViewController.m */; };
-		B0DDFA7515BA9EC700CE8B15 /* ROBKMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0DDFA7315BA9EC700CE8B15 /* ROBKMasterViewController.xib */; };
-		B0DDFA7815BA9EC700CE8B15 /* ROBKDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0DDFA7615BA9EC700CE8B15 /* ROBKDetailViewController.xib */; };
+		B0DDFA6F15BA9EC700CE8B15 /* CIVOMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFA6E15BA9EC700CE8B15 /* CIVOMasterViewController.m */; };
+		B0DDFA7215BA9EC700CE8B15 /* CIVODetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFA7115BA9EC700CE8B15 /* CIVODetailViewController.m */; };
+		B0DDFA7515BA9EC700CE8B15 /* CIVOMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0DDFA7315BA9EC700CE8B15 /* CIVOMasterViewController.xib */; };
+		B0DDFA7815BA9EC700CE8B15 /* CIVODetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0DDFA7615BA9EC700CE8B15 /* CIVODetailViewController.xib */; };
+		B0DDFAD815BAAA7B00CE8B15 /* civitates.json in Resources */ = {isa = PBXBuildFile; fileRef = B0DDFAD715BAAA7B00CE8B15 /* civitates.json */; };
+		B0DDFADB15BAB29700CE8B15 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFADA15BAAD5000CE8B15 /* MBProgressHUD.m */; };
+		B0DDFADE15BAB5A800CE8B15 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFADD15BAB5A800CE8B15 /* User.m */; };
+		B0DDFAE115BAB5A800CE8B15 /* POI.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFAE015BAB5A800CE8B15 /* POI.m */; };
+		B0DDFAE415BAB5A800CE8B15 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFAE315BAB5A800CE8B15 /* City.m */; };
+		B0DDFAE715BAB5A800CE8B15 /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFAE615BAB5A800CE8B15 /* CheckIn.m */; };
+		B0DDFAEA15BAB5A800CE8B15 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFAE915BAB5A800CE8B15 /* Tour.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,15 +38,28 @@
 		B0DDFA6215BA9EC700CE8B15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B0DDFA6415BA9EC700CE8B15 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B0DDFA6615BA9EC700CE8B15 /* Civis Orbis-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Civis Orbis-Prefix.pch"; sourceTree = "<group>"; };
-		B0DDFA6715BA9EC700CE8B15 /* ROBKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ROBKAppDelegate.h; sourceTree = "<group>"; };
-		B0DDFA6815BA9EC700CE8B15 /* ROBKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ROBKAppDelegate.m; sourceTree = "<group>"; };
+		B0DDFA6715BA9EC700CE8B15 /* CIVOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIVOAppDelegate.h; sourceTree = "<group>"; };
+		B0DDFA6815BA9EC700CE8B15 /* CIVOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIVOAppDelegate.m; sourceTree = "<group>"; };
 		B0DDFA6B15BA9EC700CE8B15 /* Civis_Orbis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Civis_Orbis.xcdatamodel; sourceTree = "<group>"; };
-		B0DDFA6D15BA9EC700CE8B15 /* ROBKMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ROBKMasterViewController.h; sourceTree = "<group>"; };
-		B0DDFA6E15BA9EC700CE8B15 /* ROBKMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ROBKMasterViewController.m; sourceTree = "<group>"; };
-		B0DDFA7015BA9EC700CE8B15 /* ROBKDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ROBKDetailViewController.h; sourceTree = "<group>"; };
-		B0DDFA7115BA9EC700CE8B15 /* ROBKDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ROBKDetailViewController.m; sourceTree = "<group>"; };
-		B0DDFA7415BA9EC700CE8B15 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ROBKMasterViewController.xib; sourceTree = "<group>"; };
-		B0DDFA7715BA9EC700CE8B15 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ROBKDetailViewController.xib; sourceTree = "<group>"; };
+		B0DDFA6D15BA9EC700CE8B15 /* CIVOMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIVOMasterViewController.h; sourceTree = "<group>"; };
+		B0DDFA6E15BA9EC700CE8B15 /* CIVOMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIVOMasterViewController.m; sourceTree = "<group>"; };
+		B0DDFA7015BA9EC700CE8B15 /* CIVODetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIVODetailViewController.h; sourceTree = "<group>"; };
+		B0DDFA7115BA9EC700CE8B15 /* CIVODetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIVODetailViewController.m; sourceTree = "<group>"; };
+		B0DDFA7415BA9EC700CE8B15 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CIVOMasterViewController.xib; sourceTree = "<group>"; };
+		B0DDFA7715BA9EC700CE8B15 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CIVODetailViewController.xib; sourceTree = "<group>"; };
+		B0DDFAD715BAAA7B00CE8B15 /* civitates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = civitates.json; sourceTree = "<group>"; };
+		B0DDFAD915BAAD4F00CE8B15 /* MBProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = MBProgressHUD/MBProgressHUD.h; sourceTree = SOURCE_ROOT; };
+		B0DDFADA15BAAD5000CE8B15 /* MBProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = MBProgressHUD/MBProgressHUD.m; sourceTree = SOURCE_ROOT; };
+		B0DDFADC15BAB5A800CE8B15 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		B0DDFADD15BAB5A800CE8B15 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		B0DDFADF15BAB5A800CE8B15 /* POI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POI.h; sourceTree = "<group>"; };
+		B0DDFAE015BAB5A800CE8B15 /* POI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POI.m; sourceTree = "<group>"; };
+		B0DDFAE215BAB5A800CE8B15 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		B0DDFAE315BAB5A800CE8B15 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		B0DDFAE515BAB5A800CE8B15 /* CheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIn.h; sourceTree = "<group>"; };
+		B0DDFAE615BAB5A800CE8B15 /* CheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIn.m; sourceTree = "<group>"; };
+		B0DDFAE815BAB5A800CE8B15 /* Tour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tour.h; sourceTree = "<group>"; };
+		B0DDFAE915BAB5A800CE8B15 /* Tour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tour.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +80,8 @@
 		B0DDFA4715BA9EC700CE8B15 = {
 			isa = PBXGroup;
 			children = (
+				B0DDFA7F15BAA53200CE8B15 /* Assets */,
+				B0DDFA7E15BAA4F100CE8B15 /* Import Data */,
 				B0DDFA5E15BA9EC700CE8B15 /* Civis Orbis */,
 				B0DDFA5515BA9EC700CE8B15 /* Frameworks */,
 				B0DDFA5315BA9EC700CE8B15 /* Products */,
@@ -88,15 +110,18 @@
 		B0DDFA5E15BA9EC700CE8B15 /* Civis Orbis */ = {
 			isa = PBXGroup;
 			children = (
-				B0DDFA6715BA9EC700CE8B15 /* ROBKAppDelegate.h */,
-				B0DDFA6815BA9EC700CE8B15 /* ROBKAppDelegate.m */,
-				B0DDFA6D15BA9EC700CE8B15 /* ROBKMasterViewController.h */,
-				B0DDFA6E15BA9EC700CE8B15 /* ROBKMasterViewController.m */,
-				B0DDFA7015BA9EC700CE8B15 /* ROBKDetailViewController.h */,
-				B0DDFA7115BA9EC700CE8B15 /* ROBKDetailViewController.m */,
-				B0DDFA7315BA9EC700CE8B15 /* ROBKMasterViewController.xib */,
-				B0DDFA7615BA9EC700CE8B15 /* ROBKDetailViewController.xib */,
+				B0DDFAEB15BAB5AD00CE8B15 /* ManagedObject Subclasses */,
+				B0DDFA6715BA9EC700CE8B15 /* CIVOAppDelegate.h */,
+				B0DDFA6815BA9EC700CE8B15 /* CIVOAppDelegate.m */,
+				B0DDFA6D15BA9EC700CE8B15 /* CIVOMasterViewController.h */,
+				B0DDFA6E15BA9EC700CE8B15 /* CIVOMasterViewController.m */,
+				B0DDFA7015BA9EC700CE8B15 /* CIVODetailViewController.h */,
+				B0DDFA7115BA9EC700CE8B15 /* CIVODetailViewController.m */,
+				B0DDFA7315BA9EC700CE8B15 /* CIVOMasterViewController.xib */,
+				B0DDFA7615BA9EC700CE8B15 /* CIVODetailViewController.xib */,
 				B0DDFA6A15BA9EC700CE8B15 /* Civis_Orbis.xcdatamodeld */,
+				B0DDFAD915BAAD4F00CE8B15 /* MBProgressHUD.h */,
+				B0DDFADA15BAAD5000CE8B15 /* MBProgressHUD.m */,
 				B0DDFA5F15BA9EC700CE8B15 /* Supporting Files */,
 			);
 			path = "Civis Orbis";
@@ -111,6 +136,46 @@
 				B0DDFA6615BA9EC700CE8B15 /* Civis Orbis-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B0DDFA7E15BAA4F100CE8B15 /* Import Data */ = {
+			isa = PBXGroup;
+			children = (
+				B0DDFAD715BAAA7B00CE8B15 /* civitates.json */,
+			);
+			path = "Import Data";
+			sourceTree = "<group>";
+		};
+		B0DDFA7F15BAA53200CE8B15 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B0DDFA8015BAA54600CE8B15 /* Maps */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B0DDFA8015BAA54600CE8B15 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
+		B0DDFAEB15BAB5AD00CE8B15 /* ManagedObject Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				B0DDFAE815BAB5A800CE8B15 /* Tour.h */,
+				B0DDFAE915BAB5A800CE8B15 /* Tour.m */,
+				B0DDFAE515BAB5A800CE8B15 /* CheckIn.h */,
+				B0DDFAE615BAB5A800CE8B15 /* CheckIn.m */,
+				B0DDFAE215BAB5A800CE8B15 /* City.h */,
+				B0DDFAE315BAB5A800CE8B15 /* City.m */,
+				B0DDFADF15BAB5A800CE8B15 /* POI.h */,
+				B0DDFAE015BAB5A800CE8B15 /* POI.m */,
+				B0DDFADC15BAB5A800CE8B15 /* User.h */,
+				B0DDFADD15BAB5A800CE8B15 /* User.m */,
+			);
+			path = "ManagedObject Subclasses";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,8 +231,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0DDFA6315BA9EC700CE8B15 /* InfoPlist.strings in Resources */,
-				B0DDFA7515BA9EC700CE8B15 /* ROBKMasterViewController.xib in Resources */,
-				B0DDFA7815BA9EC700CE8B15 /* ROBKDetailViewController.xib in Resources */,
+				B0DDFA7515BA9EC700CE8B15 /* CIVOMasterViewController.xib in Resources */,
+				B0DDFA7815BA9EC700CE8B15 /* CIVODetailViewController.xib in Resources */,
+				B0DDFAD815BAAA7B00CE8B15 /* civitates.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,10 +245,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0DDFA6515BA9EC700CE8B15 /* main.m in Sources */,
-				B0DDFA6915BA9EC700CE8B15 /* ROBKAppDelegate.m in Sources */,
+				B0DDFA6915BA9EC700CE8B15 /* CIVOAppDelegate.m in Sources */,
 				B0DDFA6C15BA9EC700CE8B15 /* Civis_Orbis.xcdatamodeld in Sources */,
-				B0DDFA6F15BA9EC700CE8B15 /* ROBKMasterViewController.m in Sources */,
-				B0DDFA7215BA9EC700CE8B15 /* ROBKDetailViewController.m in Sources */,
+				B0DDFA6F15BA9EC700CE8B15 /* CIVOMasterViewController.m in Sources */,
+				B0DDFA7215BA9EC700CE8B15 /* CIVODetailViewController.m in Sources */,
+				B0DDFADB15BAB29700CE8B15 /* MBProgressHUD.m in Sources */,
+				B0DDFADE15BAB5A800CE8B15 /* User.m in Sources */,
+				B0DDFAE115BAB5A800CE8B15 /* POI.m in Sources */,
+				B0DDFAE415BAB5A800CE8B15 /* City.m in Sources */,
+				B0DDFAE715BAB5A800CE8B15 /* CheckIn.m in Sources */,
+				B0DDFAEA15BAB5A800CE8B15 /* Tour.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,20 +269,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		B0DDFA7315BA9EC700CE8B15 /* ROBKMasterViewController.xib */ = {
+		B0DDFA7315BA9EC700CE8B15 /* CIVOMasterViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B0DDFA7415BA9EC700CE8B15 /* en */,
 			);
-			name = ROBKMasterViewController.xib;
+			name = CIVOMasterViewController.xib;
 			sourceTree = "<group>";
 		};
-		B0DDFA7615BA9EC700CE8B15 /* ROBKDetailViewController.xib */ = {
+		B0DDFA7615BA9EC700CE8B15 /* CIVODetailViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B0DDFA7715BA9EC700CE8B15 /* en */,
 			);
-			name = ROBKDetailViewController.xib;
+			name = CIVODetailViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

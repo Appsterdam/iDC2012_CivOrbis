@@ -1,5 +1,5 @@
 //
-//  ROBKAppDelegate.h
+//  CIVOAppDelegate.h
 //  Civis Orbis
 //
 //  Created by Kris Markel on 7/21/12.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ROBKAppDelegate : UIResponder <UIApplicationDelegate>
+@interface CIVOAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
