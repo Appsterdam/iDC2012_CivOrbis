@@ -8,13 +8,20 @@
 
 #import "CIVOMasterViewController.h"
 
+#import "City.h"
 #import "CIVODetailViewController.h"
+#import "iCarousel.h"
 
-@interface CIVOMasterViewController ()
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+@interface CIVOMasterViewController () <iCarouselDataSource, iCarouselDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
+@property (weak, nonatomic) IBOutlet iCarousel *carouselView;
+
 @end
 
 @implementation CIVOMasterViewController
+@synthesize cityNameLabel;
+@synthesize carouselView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,13 +34,19 @@
 							
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+	[super viewDidLoad];
+	
+	self.carouselView.type = iCarouselTypeRotary;
+	self.carouselView.contentOffset = CGSizeMake(-50, 0);
+//	self.carouselView.viewpointOffset = CGSizeMake(50, 0);
 }
 
 - (void)viewDidUnload
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
+	[self setCityNameLabel:nil];
+	[self setCarouselView:nil];
+   [super viewDidUnload];
+	// Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -41,58 +54,7 @@
 	return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-#pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-	return [[self.fetchedResultsController sections] count];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-	id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-	return [sectionInfo numberOfObjects];
-}
-
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-
-	[self configureCell:cell atIndexPath:indexPath];
-    return cell;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // The table view should not be re-orderable.
-    return NO;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	if (!self.detailViewController) {
-		self.detailViewController = [[CIVODetailViewController alloc] initWithNibName:@"CIVODetailViewController" bundle:nil];
-	}
-	NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-	self.detailViewController.city = (City *)object;
-
-	NSString *backButtonText = NSLocalizedString(@"Cities", nil);
-	UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
-											 initWithTitle: backButtonText
-											 style: UIBarButtonItemStyleBordered
-											 target: nil action: nil];
-	
-	[self.navigationItem setBackBarButtonItem: backButton];
-	
-	[self.navigationController pushViewController:self.detailViewController animated:YES];
-}
 
 #pragma mark - Fetched results controller
 
@@ -135,7 +97,6 @@
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
-    [self.tableView beginUpdates];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
@@ -143,11 +104,9 @@
 {
     switch(type) {
         case NSFetchedResultsChangeInsert:
-            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeDelete:
-            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
 }
@@ -156,31 +115,24 @@
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
-    UITableView *tableView = self.tableView;
     
     switch(type) {
         case NSFetchedResultsChangeInsert:
-            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeDelete:
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
             
         case NSFetchedResultsChangeMove:
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-    [self.tableView endUpdates];
 }
 
 /*
@@ -193,10 +145,40 @@
 }
  */
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+#pragma mark - ICarouselDataSource
+
+- (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"name"] description];
+	id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:0];
+	return [sectionInfo numberOfObjects];
 }
+
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
+{
+	
+	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+	City *city = (City *) [self.fetchedResultsController objectAtIndexPath:indexPath];
+	
+	NSString *smallMapImageName = [NSString stringWithFormat:@"%@-small.jpg", city.mapFile];
+	UIImage *mapImage = [UIImage imageNamed:smallMapImageName];
+	
+	UIImageView *mapImageView = (UIImageView *)view;
+	if (!mapImageView) {
+		mapImageView = [UIImageView new];
+	}
+	
+	mapImageView.bounds = (CGRect) {
+		
+		.origin = mapImageView.bounds.origin,
+		.size = mapImage.size,
+		
+	};
+	
+	mapImageView.image = mapImage;
+	
+	return mapImageView;
+}
+
+
 
 @end

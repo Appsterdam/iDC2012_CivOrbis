@@ -32,6 +32,16 @@
 		B0DDFAEA15BAB5A800CE8B15 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFAE915BAB5A800CE8B15 /* Tour.m */; };
 		B0FCA30115BB00B800B78FC4 /* CIVOPOIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FCA2FF15BB00B800B78FC4 /* CIVOPOIViewController.m */; };
 		B0FCA30215BB00B800B78FC4 /* CIVOPOIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0FCA30015BB00B800B78FC4 /* CIVOPOIViewController.xib */; };
+		B0FCA30615BB1D5F00B78FC4 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FCA30515BB1D5F00B78FC4 /* iCarousel.m */; };
+		B0FCA31315BB205900B78FC4 /* amsterdam-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0FCA30B15BB205900B78FC4 /* amsterdam-small.jpg */; };
+		B0FCA31415BB205900B78FC4 /* amsterdam-small@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0FCA30C15BB205900B78FC4 /* amsterdam-small@2x.jpg */; };
+		B0FCA31515BB205900B78FC4 /* brugges-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0FCA30D15BB205900B78FC4 /* brugges-small.jpg */; };
+		B0FCA31615BB205900B78FC4 /* brugges-small@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0FCA30E15BB205900B78FC4 /* brugges-small@2x.jpg */; };
+		B0FCA31715BB205900B78FC4 /* cologne-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0FCA30F15BB205900B78FC4 /* cologne-small.jpg */; };
+		B0FCA31815BB205900B78FC4 /* cologne-small@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0FCA31015BB205900B78FC4 /* cologne-small@2x.jpg */; };
+		B0FCA31915BB205900B78FC4 /* london-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0FCA31115BB205900B78FC4 /* london-small.jpg */; };
+		B0FCA31A15BB205900B78FC4 /* london-small@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0FCA31215BB205900B78FC4 /* london-small@2x.jpg */; };
+		B0FCA31C15BB218800B78FC4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FCA31B15BB218800B78FC4 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +83,17 @@
 		B0FCA2FE15BB00B800B78FC4 /* CIVOPOIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIVOPOIViewController.h; sourceTree = "<group>"; };
 		B0FCA2FF15BB00B800B78FC4 /* CIVOPOIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIVOPOIViewController.m; sourceTree = "<group>"; };
 		B0FCA30015BB00B800B78FC4 /* CIVOPOIViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CIVOPOIViewController.xib; sourceTree = "<group>"; };
+		B0FCA30415BB1D5F00B78FC4 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iCarousel.h; path = iCarousel/iCarousel/iCarousel.h; sourceTree = SOURCE_ROOT; };
+		B0FCA30515BB1D5F00B78FC4 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iCarousel.m; path = iCarousel/iCarousel/iCarousel.m; sourceTree = SOURCE_ROOT; };
+		B0FCA30B15BB205900B78FC4 /* amsterdam-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "amsterdam-small.jpg"; sourceTree = "<group>"; };
+		B0FCA30C15BB205900B78FC4 /* amsterdam-small@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "amsterdam-small@2x.jpg"; sourceTree = "<group>"; };
+		B0FCA30D15BB205900B78FC4 /* brugges-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "brugges-small.jpg"; sourceTree = "<group>"; };
+		B0FCA30E15BB205900B78FC4 /* brugges-small@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "brugges-small@2x.jpg"; sourceTree = "<group>"; };
+		B0FCA30F15BB205900B78FC4 /* cologne-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cologne-small.jpg"; sourceTree = "<group>"; };
+		B0FCA31015BB205900B78FC4 /* cologne-small@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cologne-small@2x.jpg"; sourceTree = "<group>"; };
+		B0FCA31115BB205900B78FC4 /* london-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "london-small.jpg"; sourceTree = "<group>"; };
+		B0FCA31215BB205900B78FC4 /* london-small@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "london-small@2x.jpg"; sourceTree = "<group>"; };
+		B0FCA31B15BB218800B78FC4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0FCA31C15BB218800B78FC4 /* QuartzCore.framework in Frameworks */,
 				B0DDFA5715BA9EC700CE8B15 /* UIKit.framework in Frameworks */,
 				B0DDFA5915BA9EC700CE8B15 /* Foundation.framework in Frameworks */,
 				B0DDFA5B15BA9EC700CE8B15 /* CoreGraphics.framework in Frameworks */,
@@ -93,6 +115,7 @@
 		B0DDFA4715BA9EC700CE8B15 = {
 			isa = PBXGroup;
 			children = (
+				B0FCA31B15BB218800B78FC4 /* QuartzCore.framework */,
 				B0DDFA7F15BAA53200CE8B15 /* Assets */,
 				B0DDFA7E15BAA4F100CE8B15 /* Import Data */,
 				B0DDFA5E15BA9EC700CE8B15 /* Civis Orbis */,
@@ -123,6 +146,8 @@
 		B0DDFA5E15BA9EC700CE8B15 /* Civis Orbis */ = {
 			isa = PBXGroup;
 			children = (
+				B0FCA30415BB1D5F00B78FC4 /* iCarousel.h */,
+				B0FCA30515BB1D5F00B78FC4 /* iCarousel.m */,
 				B0DDFAEB15BAB5AD00CE8B15 /* ManagedObject Subclasses */,
 				B0DDFA6715BA9EC700CE8B15 /* CIVOAppDelegate.h */,
 				B0DDFA6815BA9EC700CE8B15 /* CIVOAppDelegate.m */,
@@ -174,6 +199,14 @@
 		B0DDFA8015BAA54600CE8B15 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				B0FCA30B15BB205900B78FC4 /* amsterdam-small.jpg */,
+				B0FCA30C15BB205900B78FC4 /* amsterdam-small@2x.jpg */,
+				B0FCA30D15BB205900B78FC4 /* brugges-small.jpg */,
+				B0FCA30E15BB205900B78FC4 /* brugges-small@2x.jpg */,
+				B0FCA30F15BB205900B78FC4 /* cologne-small.jpg */,
+				B0FCA31015BB205900B78FC4 /* cologne-small@2x.jpg */,
+				B0FCA31115BB205900B78FC4 /* london-small.jpg */,
+				B0FCA31215BB205900B78FC4 /* london-small@2x.jpg */,
 				B03DC28715BAD48100F19D49 /* amsterdam.jpg */,
 				B03DC28815BAD48100F19D49 /* brugges.jpg */,
 				B03DC28915BAD48100F19D49 /* cologne.jpg */,
@@ -259,6 +292,14 @@
 				B03DC28C15BAD48100F19D49 /* cologne.jpg in Resources */,
 				B03DC28E15BAEED300F19D49 /* pin.png in Resources */,
 				B0FCA30215BB00B800B78FC4 /* CIVOPOIViewController.xib in Resources */,
+				B0FCA31315BB205900B78FC4 /* amsterdam-small.jpg in Resources */,
+				B0FCA31415BB205900B78FC4 /* amsterdam-small@2x.jpg in Resources */,
+				B0FCA31515BB205900B78FC4 /* brugges-small.jpg in Resources */,
+				B0FCA31615BB205900B78FC4 /* brugges-small@2x.jpg in Resources */,
+				B0FCA31715BB205900B78FC4 /* cologne-small.jpg in Resources */,
+				B0FCA31815BB205900B78FC4 /* cologne-small@2x.jpg in Resources */,
+				B0FCA31915BB205900B78FC4 /* london-small.jpg in Resources */,
+				B0FCA31A15BB205900B78FC4 /* london-small@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +322,7 @@
 				B0DDFAE715BAB5A800CE8B15 /* CheckIn.m in Sources */,
 				B0DDFAEA15BAB5A800CE8B15 /* Tour.m in Sources */,
 				B0FCA30115BB00B800B78FC4 /* CIVOPOIViewController.m in Sources */,
+				B0FCA30615BB1D5F00B78FC4 /* iCarousel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

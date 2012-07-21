@@ -12,7 +12,7 @@
 
 #import <CoreData/CoreData.h>
 
-@interface CIVOMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface CIVOMasterViewController :UIViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) CIVODetailViewController *detailViewController;
 
