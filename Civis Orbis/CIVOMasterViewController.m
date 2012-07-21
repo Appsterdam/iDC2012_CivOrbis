@@ -16,12 +16,14 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 @property (weak, nonatomic) IBOutlet iCarousel *carouselView;
+@property (weak, nonatomic) IBOutlet UILabel *selectACityLabel;
 
 @end
 
 @implementation CIVOMasterViewController
 @synthesize cityNameLabel;
 @synthesize carouselView;
+@synthesize selectACityLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +37,10 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+	
+	self.selectACityLabel.font = [UIFont fontWithName:@"IM FELL English" size:24];
+	
+	self.cityNameLabel.font = [UIFont fontWithName:@"IM FELL English" size:24];
 	
 	self.carouselView.type = iCarouselTypeRotary;
 }
@@ -50,6 +56,7 @@
 {
 	[self setCityNameLabel:nil];
 	[self setCarouselView:nil];
+	[self setSelectACityLabel:nil];
    [super viewDidUnload];
 	// Release any retained subviews of the main view.
 }
