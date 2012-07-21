@@ -37,8 +37,6 @@
 	[super viewDidLoad];
 	
 	self.carouselView.type = iCarouselTypeRotary;
-	self.carouselView.contentOffset = CGSizeMake(-50, 0);
-//	self.carouselView.viewpointOffset = CGSizeMake(50, 0);
 }
 
 - (void)viewDidUnload
@@ -54,7 +52,13 @@
 	return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+#pragma mark - Orientation
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+	// HACK To get the carousel to resize after an orentation change.
+	[self.carouselView reloadData];
+}
 
 #pragma mark - Fetched results controller
 
@@ -95,55 +99,10 @@
     return _fetchedResultsController;
 }    
 
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
-{
-}
-
-- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
-{
-    switch(type) {
-        case NSFetchedResultsChangeInsert:
-            break;
-            
-        case NSFetchedResultsChangeDelete:
-            break;
-    }
-}
-
-- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
-       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
-      newIndexPath:(NSIndexPath *)newIndexPath
-{
-    
-    switch(type) {
-        case NSFetchedResultsChangeInsert:
-            break;
-            
-        case NSFetchedResultsChangeDelete:
-            break;
-            
-        case NSFetchedResultsChangeUpdate:
-            break;
-            
-        case NSFetchedResultsChangeMove:
-            break;
-    }
-}
-
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
+	[self.carouselView reloadData];
 }
-
-/*
-// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
- 
- - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    // In the simplest, most efficient, case, reload the table view.
-    [self.tableView reloadData];
-}
- */
 
 #pragma mark - ICarouselDataSource
 
@@ -165,12 +124,16 @@
 	UIImageView *mapImageView = (UIImageView *)view;
 	if (!mapImageView) {
 		mapImageView = [UIImageView new];
+		mapImageView.contentMode = UIViewContentModeScaleAspectFit;
 	}
+	
+	float scale = MIN( self.carouselView.bounds.size.width/mapImage.size.width, self.carouselView.bounds.size.height/mapImage.size.height);
 	
 	mapImageView.bounds = (CGRect) {
 		
 		.origin = mapImageView.bounds.origin,
-		.size = mapImage.size,
+		.size.width = mapImage.size.width * scale * 0.9,
+		.size.height = mapImage.size.height * scale *0.9,
 		
 	};
 	
