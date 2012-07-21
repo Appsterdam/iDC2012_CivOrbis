@@ -65,7 +65,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">Select A City</string>
+						<string key="IBUIText">Choose Your Adventure</string>
 						<object class="NSColor" key="IBUITextColor" id="66636894">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -90,6 +90,7 @@
 						<string key="NSFrame">{{20, 408}, {280, 32}}</string>
 						<reference key="NSSuperview" ref="645492141"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
