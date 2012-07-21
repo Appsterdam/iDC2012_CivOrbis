@@ -12,7 +12,7 @@
 #import "CIVOPOIViewController.h"
 #import "POI.h"
 
-const float CIVOInitialMapZoomLevel = 0.2;
+const float CIVOInitialMapZoomLevel = 0.225;
 
 @interface CIVODetailViewController () <UIScrollViewDelegate>
 

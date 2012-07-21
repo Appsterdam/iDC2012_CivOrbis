@@ -37,7 +37,12 @@ NSString * const CIVODataImportedUserDefaultsKey = @"CIVODataImportedUserDefault
 	CIVOMasterViewController *masterViewController = [[CIVOMasterViewController alloc] initWithNibName:@"CIVOMasterViewController" bundle:nil];
 	self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
 	[self.navigationController setNavigationBarHidden:YES];
+
+	self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+	self.navigationController.navigationBar.translucent = YES;
+	
 	masterViewController.managedObjectContext = self.managedObjectContext;
+	
 	self.window.rootViewController = self.navigationController;
 	[self.window makeKeyAndVisible];
 	
