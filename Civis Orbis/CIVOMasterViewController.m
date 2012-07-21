@@ -132,6 +132,10 @@
 	if (!mapImageView) {
 		mapImageView = [UIImageView new];
 		mapImageView.contentMode = UIViewContentModeScaleAspectFit;
+		mapImageView.layer.shadowColor = [[UIColor blackColor] CGColor];
+		mapImageView.layer.shadowOffset = CGSizeMake(15.0, 15.0);
+		mapImageView.layer.shadowOpacity = 0.8;
+		mapImageView.layer.shadowRadius = 10.0;
 	}
 	
 	float scale = MIN( self.carouselView.bounds.size.width/mapImage.size.width, self.carouselView.bounds.size.height/mapImage.size.height);
