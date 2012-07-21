@@ -22,6 +22,8 @@ const float CIVOInitialMapZoomLevel = 0.2;
 
 @property (nonatomic, strong) NSArray *POIs;
 
+- (IBAction)toursButtonTapped:(id)sender;
+
 - (void) configureView;
 - (void) handlePinTap: (UIGestureRecognizer *)gestureRecognizer;
 
@@ -44,6 +46,9 @@ const float CIVOInitialMapZoomLevel = 0.2;
         // Update the view.
         [self configureView];
     }
+}
+
+- (IBAction)toursButtonTapped:(id)sender {
 }
 
 - (void)configureView
