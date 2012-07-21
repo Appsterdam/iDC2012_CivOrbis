@@ -1,0 +1,14 @@
+.DS_Store
+Icon?
+build
+*.mode*
+*.pbxuser
+*.perspectivev3
+xcuserdata
+*.xcuserdatad
+*.perspective 
+*~.nib/
+build/*
+.svn
+profile
+NookStudy.xcodeproj/project.xcworkspace/contents.xcworkspacedata
