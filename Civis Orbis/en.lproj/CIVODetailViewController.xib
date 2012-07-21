@@ -47,7 +47,7 @@
 								<int key="NSvFlags">274</int>
 								<string key="NSFrameSize">{320, 416}</string>
 								<reference key="NSSuperview" ref="280639230"/>
-								<reference key="NSNextKeyView" ref="642527686"/>
+								<reference key="NSNextKeyView" ref="679835313"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">9</int>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -65,7 +65,7 @@
 						<float key="IBUIMinimumZoomScale">0.20000000298023224</float>
 						<float key="IBUIMaximumZoomScale">5</float>
 					</object>
-					<object class="IBUIToolbar" id="642527686">
+					<object class="IBUIToolbar" id="679835313">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{0, 416}, {320, 44}}</string>
@@ -75,10 +75,10 @@
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<array class="NSMutableArray" key="IBUIItems">
-							<object class="IBUIBarButtonItem" id="1067934632">
+							<object class="IBUIBarButtonItem" id="750726403">
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIStyle">1</int>
-								<reference key="IBUIToolbar" ref="642527686"/>
+								<reference key="IBUIToolbar" ref="679835313"/>
 								<int key="IBUISystemItemIdentifier">11</int>
 							</object>
 						</array>
@@ -135,7 +135,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">toursButtonTapped:</string>
-						<reference key="source" ref="1067934632"/>
+						<reference key="source" ref="750726403"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">16</int>
@@ -154,7 +154,7 @@
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="280639230"/>
-							<reference ref="642527686"/>
+							<reference ref="679835313"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -184,16 +184,16 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">14</int>
-						<reference key="object" ref="642527686"/>
+						<reference key="object" ref="679835313"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="1067934632"/>
+							<reference ref="750726403"/>
 						</array>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">15</int>
-						<reference key="object" ref="1067934632"/>
-						<reference key="parent" ref="642527686"/>
+						<reference key="object" ref="750726403"/>
+						<reference key="parent" ref="679835313"/>
 					</object>
 				</array>
 			</object>

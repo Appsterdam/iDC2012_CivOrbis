@@ -77,12 +77,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!self.detailViewController) {
-        self.detailViewController = [[CIVODetailViewController alloc] initWithNibName:@"CIVODetailViewController" bundle:nil];
-    }
-    NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    self.detailViewController.city = (City *)object;
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
+	if (!self.detailViewController) {
+		self.detailViewController = [[CIVODetailViewController alloc] initWithNibName:@"CIVODetailViewController" bundle:nil];
+	}
+	NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+	self.detailViewController.city = (City *)object;
+
+	NSString *backButtonText = NSLocalizedString(@"Cities", nil);
+	UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+											 initWithTitle: backButtonText
+											 style: UIBarButtonItemStyleBordered
+											 target: nil action: nil];
+	
+	[self.navigationItem setBackBarButtonItem: backButton];
+	
+	[self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
 #pragma mark - Fetched results controller
