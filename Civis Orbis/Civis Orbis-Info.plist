@@ -40,6 +40,8 @@
 		<string>IMFePIit28P.ttf</string>
 		<string>IMFeENrm28P.ttf</string>
 	</array>
+	<key>UILaunchImageFile</key>
+	<string>background.png</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

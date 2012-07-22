@@ -39,7 +39,7 @@
 					<object class="IBUIImageView" id="200833802">
 						<reference key="NSNextResponder" ref="645492141"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrameSize">{320, 460}</string>
+						<string key="NSFrame">{{0, -20}, {320, 480}}</string>
 						<reference key="NSSuperview" ref="645492141"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="904294739"/>
