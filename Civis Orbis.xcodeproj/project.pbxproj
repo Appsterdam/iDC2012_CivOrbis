@@ -503,6 +503,7 @@
 		B0DDFA7C15BA9EC700CE8B15 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Civis Orbis/Civis Orbis-Prefix.pch";
 				INFOPLIST_FILE = "Civis Orbis/Civis Orbis-Info.plist";
@@ -514,6 +515,7 @@
 		B0DDFA7D15BA9EC700CE8B15 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Civis Orbis/Civis Orbis-Prefix.pch";
 				INFOPLIST_FILE = "Civis Orbis/Civis Orbis-Info.plist";

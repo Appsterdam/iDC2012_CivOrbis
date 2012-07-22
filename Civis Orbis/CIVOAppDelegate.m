@@ -28,6 +28,9 @@ NSString * const CIVODataImportedUserDefaultsKey = @"CIVODataImportedUserDefault
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+@synthesize window = _window;
+@synthesize navigationController = _navigationController;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	UIFont *titleFont = [UIFont fontWithName:@"IM FELL English" size:0.0];

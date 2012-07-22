@@ -26,6 +26,10 @@
 @synthesize selectACityLabel;
 @synthesize splashScreenImage;
 
+@synthesize detailViewController = _detailViewController;
+@synthesize fetchedResultsController = _fetchedResultsController;
+@synthesize managedObjectContext = _managedObjectContext;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

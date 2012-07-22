@@ -28,6 +28,7 @@
 @synthesize textView;
 @synthesize checkInButton;
 @synthesize atSiteLabel;
+@synthesize POI = _POI;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

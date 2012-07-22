@@ -38,6 +38,11 @@ const NSTimeInterval CIVOTimeIntervalBeforeHidingNavBar = 3.0;
 @synthesize scrollView;
 @synthesize mapImageView;
 
+@synthesize city = _city;
+@synthesize POIViewController = _POIViewController;
+@synthesize hideNavbarTimer = _hideNavbarTimer;
+@synthesize POIs = _POIs;
+
 - (void) dealloc
 {
 	[_hideNavbarTimer invalidate];
