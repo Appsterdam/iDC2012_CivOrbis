@@ -8,11 +8,15 @@
 
 #import "CIVOPOIViewController.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "POI.h"
 
 @interface CIVOPOIViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+
+@property (weak, nonatomic) IBOutlet UIButton *checkInButton;
 
 - (void) configureView;
 
@@ -20,6 +24,7 @@
 
 @implementation CIVOPOIViewController
 @synthesize textView;
+@synthesize checkInButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,6 +41,15 @@
 	// Do any additional setup after loading the view from its nib.
 	
 	[self configureView];
+	
+	// Fancy up the button.
+	self.checkInButton.layer.shadowColor = [[UIColor whiteColor] CGColor];
+	self.checkInButton.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+	self.checkInButton.layer.shadowOpacity = 0.8;
+	self.checkInButton.layer.shadowRadius = 10.0;
+	
+	self.checkInButton.titleLabel.font = [UIFont fontWithName:@"IM FELL English" size:20];
+
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -48,6 +62,7 @@
 - (void)viewDidUnload
 {
 	[self setTextView:nil];
+	[self setCheckInButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
