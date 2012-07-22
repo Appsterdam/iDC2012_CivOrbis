@@ -97,6 +97,7 @@ const NSTimeInterval CIVOTimeIntervalBeforeHidingNavBar = 3.0;
 		[pinView addGestureRecognizer:tapRecognizer];
 	}
 	
+	// BUGBUG: For some reason the content size is continually growing.
 	self.scrollView.contentSize = self.mapImageView.image.size;
 	self.scrollView.zoomScale = CIVOInitialMapZoomLevel;
 }
