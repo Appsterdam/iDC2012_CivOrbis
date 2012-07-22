@@ -61,6 +61,14 @@
 	[self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
+- (void) viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	
+	// To be extra safe, make sure the nav bar is showing.
+	[self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 - (void)viewDidUnload
 {
 	[self setTextView:nil];
