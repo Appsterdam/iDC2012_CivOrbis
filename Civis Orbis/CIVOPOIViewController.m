@@ -43,8 +43,6 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view from its nib.
 	
-	[self configureView];
-	
 	// Fancy up the button.
 	self.checkInButton.titleLabel.font = [UIFont fontWithName:@"IM FELL English" size:20];
 	
@@ -52,6 +50,7 @@
 	self.textView.font = [UIFont fontWithName:@"Fondamento" size:18];
 	self.atSiteLabel.font = [UIFont fontWithName:@"Fondamento" size:14];
 
+	[self configureView];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -108,7 +107,7 @@
 	
 	// resize the text view to fit its text.
 	CGRect frame = self.textView.frame;
-	frame.size.height = self.textView.contentSize.height * 1.1; // The 1.1 is a hack because or font metrics are off.
+	frame.size.height = self.textView.contentSize.height; 
 	self.textView.frame = frame;
 	
 	// Place the button.
@@ -137,6 +136,7 @@
 	};
 	
 	self.scrollView.contentOffset = CGPointZero;
+	[self.scrollView flashScrollIndicators];
 }
 
 @end
