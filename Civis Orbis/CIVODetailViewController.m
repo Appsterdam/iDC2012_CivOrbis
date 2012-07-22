@@ -73,6 +73,11 @@ const NSTimeInterval CIVOTimeIntervalBeforeHidingNavBar = 3.0;
 	};
 	self.mapImageView.image = mapImage;
 
+	// Remove old POIs.
+	for (UIView *subview in self.mapImageView.subviews) {
+		[subview removeFromSuperview];
+	}
+	
 	// Place the pins:
 	for (POI *poi in self.POIs) {
 
