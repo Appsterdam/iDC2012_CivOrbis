@@ -29,6 +29,10 @@
 		B051781915BC105400C85CEE /* Lusitana-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B051781715BC105400C85CEE /* Lusitana-Regular.ttf */; };
 		B051782115BC2FA700C85CEE /* CIVOCheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B051781F15BC2FA700C85CEE /* CIVOCheckInViewController.m */; };
 		B051782215BC2FA700C85CEE /* CIVOCheckInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B051782015BC2FA700C85CEE /* CIVOCheckInViewController.xib */; };
+		B051782E15BC37CC00C85CEE /* CIVOToursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B051782C15BC37CC00C85CEE /* CIVOToursViewController.m */; };
+		B051782F15BC37CC00C85CEE /* CIVOToursViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B051782D15BC37CC00C85CEE /* CIVOToursViewController.xib */; };
+		B051783315BC38F500C85CEE /* background-route.png in Resources */ = {isa = PBXBuildFile; fileRef = B051783115BC38F500C85CEE /* background-route.png */; };
+		B051783415BC38F500C85CEE /* background-route@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B051783215BC38F500C85CEE /* background-route@2x.png */; };
 		B0DDFA5715BA9EC700CE8B15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DDFA5615BA9EC700CE8B15 /* UIKit.framework */; };
 		B0DDFA5915BA9EC700CE8B15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DDFA5815BA9EC700CE8B15 /* Foundation.framework */; };
 		B0DDFA5B15BA9EC700CE8B15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DDFA5A15BA9EC700CE8B15 /* CoreGraphics.framework */; };
@@ -88,6 +92,11 @@
 		B051781E15BC2FA700C85CEE /* CIVOCheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIVOCheckInViewController.h; sourceTree = "<group>"; };
 		B051781F15BC2FA700C85CEE /* CIVOCheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIVOCheckInViewController.m; sourceTree = "<group>"; };
 		B051782015BC2FA700C85CEE /* CIVOCheckInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CIVOCheckInViewController.xib; sourceTree = "<group>"; };
+		B051782B15BC37CC00C85CEE /* CIVOToursViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIVOToursViewController.h; sourceTree = "<group>"; };
+		B051782C15BC37CC00C85CEE /* CIVOToursViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIVOToursViewController.m; sourceTree = "<group>"; };
+		B051782D15BC37CC00C85CEE /* CIVOToursViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CIVOToursViewController.xib; sourceTree = "<group>"; };
+		B051783115BC38F500C85CEE /* background-route.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-route.png"; sourceTree = "<group>"; };
+		B051783215BC38F500C85CEE /* background-route@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-route@2x.png"; sourceTree = "<group>"; };
 		B0DDFA5215BA9EC700CE8B15 /* Civis Orbis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Civis Orbis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0DDFA5615BA9EC700CE8B15 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B0DDFA5815BA9EC700CE8B15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -237,6 +246,9 @@
 				B051781E15BC2FA700C85CEE /* CIVOCheckInViewController.h */,
 				B051781F15BC2FA700C85CEE /* CIVOCheckInViewController.m */,
 				B051782015BC2FA700C85CEE /* CIVOCheckInViewController.xib */,
+				B051782B15BC37CC00C85CEE /* CIVOToursViewController.h */,
+				B051782C15BC37CC00C85CEE /* CIVOToursViewController.m */,
+				B051782D15BC37CC00C85CEE /* CIVOToursViewController.xib */,
 			);
 			path = "Civis Orbis";
 			sourceTree = "<group>";
@@ -263,6 +275,8 @@
 		B0DDFA7F15BAA53200CE8B15 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B051783115BC38F500C85CEE /* background-route.png */,
+				B051783215BC38F500C85CEE /* background-route@2x.png */,
 				B051781115BBF72A00C85CEE /* button-paper.png */,
 				B051781215BBF72A00C85CEE /* button-paper@2x.png */,
 				B051780115BBEDBF00C85CEE /* background-paper-ornament.png */,
@@ -401,6 +415,9 @@
 				B051781815BC105400C85CEE /* Fondamento-Regular.ttf in Resources */,
 				B051781915BC105400C85CEE /* Lusitana-Regular.ttf in Resources */,
 				B051782215BC2FA700C85CEE /* CIVOCheckInViewController.xib in Resources */,
+				B051782F15BC37CC00C85CEE /* CIVOToursViewController.xib in Resources */,
+				B051783315BC38F500C85CEE /* background-route.png in Resources */,
+				B051783415BC38F500C85CEE /* background-route@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +442,7 @@
 				B0FCA30115BB00B800B78FC4 /* CIVOPOIViewController.m in Sources */,
 				B0FCA30615BB1D5F00B78FC4 /* iCarousel.m in Sources */,
 				B051782115BC2FA700C85CEE /* CIVOCheckInViewController.m in Sources */,
+				B051782E15BC37CC00C85CEE /* CIVOToursViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

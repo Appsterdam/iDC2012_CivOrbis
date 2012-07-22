@@ -10,6 +10,7 @@
 
 #import "City.h"
 #import "CIVOPOIViewController.h"
+#import "CIVOToursViewController.h"
 #import "POI.h"
 
 const float CIVOInitialMapZoomLevel = 0.225;
@@ -24,6 +25,8 @@ const NSTimeInterval CIVOTimeIntervalBeforeHidingNavBar = 3.0;
 @property (strong, nonatomic) NSTimer *hideNavbarTimer;
 
 @property (nonatomic, strong) NSArray *POIs;
+
+- (IBAction)toursButtonTapped:(id)sender;
 
 - (void) configureView;
 - (void) handlePinTap: (UIGestureRecognizer *)gestureRecognizer;
@@ -59,6 +62,13 @@ const NSTimeInterval CIVOTimeIntervalBeforeHidingNavBar = 3.0;
         // Update the view.
         [self configureView];
     }
+}
+
+- (IBAction)toursButtonTapped:(id)sender {
+	
+	CIVOToursViewController *toursVC = [[CIVOToursViewController alloc] initWithNibName:nil bundle:nil];
+	[self presentModalViewController:toursVC animated:YES];
+	
 }
 
 - (void)configureView
