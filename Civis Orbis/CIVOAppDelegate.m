@@ -30,6 +30,10 @@ NSString * const CIVODataImportedUserDefaultsKey = @"CIVODataImportedUserDefault
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	UIFont *titleFont = [UIFont fontWithName:@"IM FELL English" size:21];
+	
+	NSDictionary *titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys: titleFont, UITextAttributeFont, nil];
+	[[UINavigationBar appearance] setTitleTextAttributes:titleTextAttributes];
 	
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	// Override point for customization after application launch.
