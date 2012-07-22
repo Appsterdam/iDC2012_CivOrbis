@@ -49,6 +49,7 @@
 	
 	// Fancy up the button.
 	self.checkInButton.titleLabel.font = [UIFont fontWithName:@"IM FELL English" size:20];
+	[self.checkInButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
 	
 	// Fancy up the text.
 	self.textView.font = [UIFont fontWithName:@"Fondamento" size:18];

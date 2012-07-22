@@ -39,6 +39,8 @@
     // Do any additional setup after loading the view from its nib.
 	
 	self.publishButton.titleLabel.font = [UIFont fontWithName:@"IM FELL English" size:20];
+	[self.publishButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+	
 	self.checkInLabel.font = [UIFont fontWithName:@"IM FELL English" size:30];
 	self.saySomethingLabel.font = [UIFont fontWithName:@"IM FELL English" size:20];
 
