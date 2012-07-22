@@ -25,6 +25,8 @@
 		B051780415BBEDBF00C85CEE /* background-paper-ornament@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B051780215BBEDBF00C85CEE /* background-paper-ornament@2x.png */; };
 		B051781315BBF72A00C85CEE /* button-paper.png in Resources */ = {isa = PBXBuildFile; fileRef = B051781115BBF72A00C85CEE /* button-paper.png */; };
 		B051781415BBF72A00C85CEE /* button-paper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B051781215BBF72A00C85CEE /* button-paper@2x.png */; };
+		B051781815BC105400C85CEE /* Fondamento-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B051781615BC105400C85CEE /* Fondamento-Regular.ttf */; };
+		B051781915BC105400C85CEE /* Lusitana-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B051781715BC105400C85CEE /* Lusitana-Regular.ttf */; };
 		B0DDFA5715BA9EC700CE8B15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DDFA5615BA9EC700CE8B15 /* UIKit.framework */; };
 		B0DDFA5915BA9EC700CE8B15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DDFA5815BA9EC700CE8B15 /* Foundation.framework */; };
 		B0DDFA5B15BA9EC700CE8B15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DDFA5A15BA9EC700CE8B15 /* CoreGraphics.framework */; };
@@ -79,6 +81,8 @@
 		B051780215BBEDBF00C85CEE /* background-paper-ornament@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-paper-ornament@2x.png"; sourceTree = "<group>"; };
 		B051781115BBF72A00C85CEE /* button-paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-paper.png"; sourceTree = "<group>"; };
 		B051781215BBF72A00C85CEE /* button-paper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-paper@2x.png"; sourceTree = "<group>"; };
+		B051781615BC105400C85CEE /* Fondamento-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fondamento-Regular.ttf"; sourceTree = "<group>"; };
+		B051781715BC105400C85CEE /* Lusitana-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lusitana-Regular.ttf"; sourceTree = "<group>"; };
 		B0DDFA5215BA9EC700CE8B15 /* Civis Orbis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Civis Orbis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0DDFA5615BA9EC700CE8B15 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B0DDFA5815BA9EC700CE8B15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -145,6 +149,8 @@
 		B05177B115BB3D0900C85CEE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				B051781615BC105400C85CEE /* Fondamento-Regular.ttf */,
+				B051781715BC105400C85CEE /* Lusitana-Regular.ttf */,
 				B05177C015BB3D0900C85CEE /* IM_Fell_DW_Pica */,
 				B05177C415BB3D0900C85CEE /* IM_Fell_English */,
 			);
@@ -384,6 +390,8 @@
 				B051780415BBEDBF00C85CEE /* background-paper-ornament@2x.png in Resources */,
 				B051781315BBF72A00C85CEE /* button-paper.png in Resources */,
 				B051781415BBF72A00C85CEE /* button-paper@2x.png in Resources */,
+				B051781815BC105400C85CEE /* Fondamento-Regular.ttf in Resources */,
+				B051781915BC105400C85CEE /* Lusitana-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,6 +39,8 @@
 	<array>
 		<string>IMFePIit28P.ttf</string>
 		<string>IMFeENrm28P.ttf</string>
+		<string>Lusitana-Regular.ttf</string>
+		<string>Fondamento-Regular.ttf</string>
 	</array>
 	<key>UILaunchImageFile</key>
 	<string>background.png</string>
