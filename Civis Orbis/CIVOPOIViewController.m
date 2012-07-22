@@ -15,8 +15,8 @@
 @interface CIVOPOIViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
-
 @property (weak, nonatomic) IBOutlet UIButton *checkInButton;
+@property (weak, nonatomic) IBOutlet UILabel *atSiteLabel;
 
 - (void) configureView;
 
@@ -25,6 +25,7 @@
 @implementation CIVOPOIViewController
 @synthesize textView;
 @synthesize checkInButton;
+@synthesize atSiteLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,6 +48,7 @@
 	
 	// Fancy up the text.
 	self.textView.font = [UIFont fontWithName:@"Fondamento" size:18];
+	self.atSiteLabel.font = [UIFont fontWithName:@"Fondamento" size:14];
 
 }
 
@@ -61,6 +63,7 @@
 {
 	[self setTextView:nil];
 	[self setCheckInButton:nil];
+	[self setAtSiteLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
