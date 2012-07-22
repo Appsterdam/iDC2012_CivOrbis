@@ -107,12 +107,17 @@ const NSTimeInterval CIVOTimeIntervalBeforeHidingNavBar = 3.0;
 	[self.scrollView addGestureRecognizer:tapRecognizer];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	[self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 - (void) viewDidAppear:(BOOL)animated
 {
 	[super viewDidAppear:animated];
 
-	[self.navigationController setNavigationBarHidden:NO animated:YES];
-	
 	[self.hideNavbarTimer invalidate];
 	self.hideNavbarTimer = [NSTimer scheduledTimerWithTimeInterval:CIVOTimeIntervalBeforeHidingNavBar target:self selector:@selector(handleHideNavBarTimerFired:) userInfo:nil repeats:NO];
 }
