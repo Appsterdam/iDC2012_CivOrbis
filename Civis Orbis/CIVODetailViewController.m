@@ -70,6 +70,7 @@ const NSTimeInterval CIVOTimeIntervalBeforeHidingNavBar = 3.0;
 	// Update the user interface for the detail item.
 	self.title = self.city.name;
 	
+	// We have to reset the zoom scale to 1 or all our frame calculations are off.
 	self.scrollView.zoomScale = 1.0;
 	
 	NSString *mapFileName = [NSString stringWithFormat:@"%@.jpg", self.city.mapFile];
