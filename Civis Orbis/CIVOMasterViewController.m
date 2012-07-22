@@ -24,6 +24,7 @@
 @synthesize cityNameLabel;
 @synthesize carouselView;
 @synthesize selectACityLabel;
+@synthesize splashScreenImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,6 +58,7 @@
 	[self setCityNameLabel:nil];
 	[self setCarouselView:nil];
 	[self setSelectACityLabel:nil];
+	[self setSplashScreenImage:nil];
    [super viewDidUnload];
 	// Release any retained subviews of the main view.
 }

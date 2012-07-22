@@ -46,6 +46,12 @@ NSString * const CIVODataImportedUserDefaultsKey = @"CIVODataImportedUserDefault
 	self.window.rootViewController = self.navigationController;
 	[self.window makeKeyAndVisible];
 	
+	[UIView animateWithDuration:0.3 animations:^{
+		masterViewController.splashScreenImage.alpha = 0.0;
+	} completion:^(BOOL finished) {
+		[masterViewController.splashScreenImage removeFromSuperview];
+	}];
+	
 	[self importData];
 	
 	return YES;
