@@ -10,6 +10,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+#import "CIVOCheckInViewController.h"
 #import "POI.h"
 
 @interface CIVOPOIViewController ()
@@ -18,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIButton *checkInButton;
 @property (weak, nonatomic) IBOutlet UILabel *atSiteLabel;
+
+- (IBAction)checkInButtonTapped:(id)sender;
 
 - (void) configureView;
 
@@ -104,6 +107,13 @@
 }
 
 #pragma mark - Private
+
+- (IBAction)checkInButtonTapped:(id)sender {
+	
+	CIVOCheckInViewController *checkInViewController = [[CIVOCheckInViewController alloc] initWithNibName:nil bundle:nil];
+	[self presentModalViewController:checkInViewController animated:YES];
+	
+}
 
 - (void) configureView
 {
