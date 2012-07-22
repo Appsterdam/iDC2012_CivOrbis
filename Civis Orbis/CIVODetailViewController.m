@@ -70,10 +70,12 @@ const NSTimeInterval CIVOTimeIntervalBeforeHidingNavBar = 3.0;
 	// Update the user interface for the detail item.
 	self.title = self.city.name;
 	
+	self.scrollView.zoomScale = 1.0;
+	
 	NSString *mapFileName = [NSString stringWithFormat:@"%@.jpg", self.city.mapFile];
 	UIImage *mapImage = [UIImage imageNamed:mapFileName];
 	self.mapImageView.frame = (CGRect) {
-		.origin = CGPointZero,
+		.origin = self.mapImageView.frame.origin,
 		.size = mapImage.size,
 	};
 	self.mapImageView.image = mapImage;
@@ -102,7 +104,6 @@ const NSTimeInterval CIVOTimeIntervalBeforeHidingNavBar = 3.0;
 		[pinView addGestureRecognizer:tapRecognizer];
 	}
 	
-	// BUGBUG: For some reason the content size is continually growing.
 	self.scrollView.contentSize = self.mapImageView.image.size;
 	self.scrollView.zoomScale = CIVOInitialMapZoomLevel;
 }
