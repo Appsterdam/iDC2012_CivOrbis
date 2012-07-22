@@ -14,6 +14,7 @@
 
 @interface CIVOPOIViewController ()
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIButton *checkInButton;
 @property (weak, nonatomic) IBOutlet UILabel *atSiteLabel;
@@ -23,6 +24,7 @@
 @end
 
 @implementation CIVOPOIViewController
+@synthesize scrollView;
 @synthesize textView;
 @synthesize checkInButton;
 @synthesize atSiteLabel;
@@ -64,6 +66,7 @@
 	[self setTextView:nil];
 	[self setCheckInButton:nil];
 	[self setAtSiteLabel:nil];
+	[self setScrollView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -90,8 +93,44 @@
 
 - (void) configureView
 {
+	if (!self.isViewLoaded) {
+		return;
+	}
+	
 	self.title = self.POI.name;
 	self.textView.text = self.POI.text;
+	
+	// resize the text view to fit its text.
+	CGRect frame = self.textView.frame;
+	frame.size.height = self.textView.contentSize.height * 1.1; // The 1.1 is a hack because or font metrics are off.
+	self.textView.frame = frame;
+	
+	// Place the button.
+	CGFloat bottom = self.textView.frame.origin.y + self.textView.frame.size.height;
+	bottom = bottom + 5.0; //padding
+	self.checkInButton.frame = (CGRect) {
+		.size = self.checkInButton.frame.size,
+		.origin.x = self.checkInButton.frame.origin.x,
+		.origin.y = bottom,
+	};
+	
+	// Place the asSiteLabel.
+	bottom = bottom + self.checkInButton.frame.size.height;
+	bottom = bottom + 5.0; //padding
+	self.atSiteLabel.frame = (CGRect) {
+		.size = self.atSiteLabel.frame.size,
+		.origin.x = self.atSiteLabel.frame.origin.x,
+		.origin.y = bottom,
+	};
+	
+	bottom = bottom + self.atSiteLabel.frame.size.height;
+	bottom = bottom + 5;
+	self.scrollView.contentSize = (CGSize) {
+		.width = self.scrollView.contentSize.width,
+		.height = bottom,
+	};
+	
+	self.scrollView.contentOffset = CGPointZero;
 }
 
 @end
