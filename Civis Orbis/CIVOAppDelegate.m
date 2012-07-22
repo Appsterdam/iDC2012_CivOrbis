@@ -30,7 +30,7 @@ NSString * const CIVODataImportedUserDefaultsKey = @"CIVODataImportedUserDefault
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	UIFont *titleFont = [UIFont fontWithName:@"IM FELL English" size:21];
+	UIFont *titleFont = [UIFont fontWithName:@"IM FELL English" size:0.0];
 	
 	NSDictionary *titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys: titleFont, UITextAttributeFont, nil];
 	[[UINavigationBar appearance] setTitleTextAttributes:titleTextAttributes];

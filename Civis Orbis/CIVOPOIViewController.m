@@ -43,11 +43,6 @@
 	[self configureView];
 	
 	// Fancy up the button.
-	self.checkInButton.layer.shadowColor = [[UIColor whiteColor] CGColor];
-	self.checkInButton.layer.shadowOffset = CGSizeMake(0.0, 0.0);
-	self.checkInButton.layer.shadowOpacity = 0.8;
-	self.checkInButton.layer.shadowRadius = 10.0;
-	
 	self.checkInButton.titleLabel.font = [UIFont fontWithName:@"IM FELL English" size:20];
 
 }
