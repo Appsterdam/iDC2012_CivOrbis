@@ -77,6 +77,12 @@
 	return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+	// HACKHACK: Deal with rotation in the clumsiest way possible.
+	[self configureView];
+}
+
 #pragma mark - Properties
 
 - (void) setPOI:(POI *)newPOI
