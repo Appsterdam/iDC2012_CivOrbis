@@ -98,7 +98,7 @@
     
     // Edit the sort key as appropriate.
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
-    NSArray *sortDescriptors = @[sortDescriptor];
+	NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
